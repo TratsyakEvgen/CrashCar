@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://orders-db:5432/orders
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  kafka:
+    bootstrap-servers: kafka:9092

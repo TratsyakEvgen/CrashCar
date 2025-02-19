@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: orders
+  servlet:
+    multipart:
+      max-file-size: 2GB
+      max-request-size: 2GB
+  datasource:
+    url: jdbc:postgresql://localhost:5433/orders
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  kafka:
+    bootstrap-servers: localhost:9094
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+topic:
+  create-order: create-order
+
+server:
+  servlet:
+    context-path: /api
+
+media:
+  storage: ./files/
+  download: http://localhost:8080/api/media/%d?secret=%s

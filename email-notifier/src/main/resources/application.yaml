@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: telegram-notifier
+  kafka:
+    bootstrap-servers: localhost:9094
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "by.crashcar.core.dto"
+  mail:
+    host: smtp.gmail.com
+    password: nvtu fauk rufl dywz
+    port: 587
+    username: tanchik776@gmail.com
+    properties:
+      "[mail.transport.protocol]": smtp
+      "[mail.smtp.auth]": true
+      "[mail.smtp.starttls.enable]": true
+
+topic:
+  create-order: create-order
+
+emails: tanchik776@gmail.com

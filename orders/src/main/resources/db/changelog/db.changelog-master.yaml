@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1739963279028-1
+      author: Tratsiak
+      changes:
+        - createTable:
+            tableName: media
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_media
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: path
+                  type: VARCHAR
+              - column:
+                  name: secret
+                  type: VARCHAR
+              - column:
+                  name: order_id
+                  type: BIGINT
+
+  - changeSet:
+      id: 1739963279028-2
+      author: Tratsiak
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_orders
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: phone
+                  type: VARCHAR
+              - column:
+                  name: message
+                  type: VARCHAR
+
+  - changeSet:
+      id: 1739963279028-5
+      author: Tratsiak
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: order_id
+            baseTableName: media
+            constraintName: FK_MEDIA_ON_ORDER
+            referencedColumnNames: id
+            referencedTableName: orders

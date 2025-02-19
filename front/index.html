@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Профессиональный кузовной ремонт с применением стапеля в Гродно. Точное восстановление геометрии кузова после аварий. Гарантия качества, доступные цены. Запишитесь онлайн!"
+          name="description">
+    <meta content="кузовной ремонт стапелем Гродно, восстановление геометрии кузова, рихтовка авто после ДТП, автосервис с каролинером Гродно"
+          name="keywords">
+    <title>Кузовной ремонт с использованием стапеля в Гродно | Восстановление геометрии авто</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Rubik Burned';
+            font-style: normal;
+            font-weight: 400;
+            src: url(fonts/Jqzk5TmOVOqQHihKqPpscqnSHgGbK41JSxcI.woff2) format('woff2');
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: 'Rubik Burned';
+            font-style: normal;
+            font-weight: 400;
+            src: url(fonts/Jqzk5TmOVOqQHihKqPpscqnSGgGbK41JSw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            font-display: swap
+        }
+
+        .navbar-background {
+            background-color: #4f4e4e !important
+        }
+
+        .nav-link-text {
+            color: #f8f8f8 !important;
+            font-family: 'Rubik Burned', serif;
+            font-size: 18px
+        }
+
+        .button-color {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4f4e4e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .copyright-text {
+            color: #f8f8f8 !important;
+            font-family: 'Rubik Burned', serif;
+            font-size: 15px
+        }
+
+        .h-text {
+            font-family: 'Rubik Burned', serif;
+            font-weight: 700
+        }
+
+        .border-color {
+            border-bottom: 2px solid #4f4e4e
+        }
+
+
+        .slipway-background {
+            background-image: url(images/slipway.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80%;
+        }
+
+        .logo-max {
+            max-width: 180px;
+            height: auto
+        }
+
+        .phone-max {
+            max-width: 200px;
+            height: auto
+        }
+
+        .progress-bar-color {
+            background-color: #4f4e4e;
+        }
+
+        /* Анимация для плавного исчезновения */
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        /* Применяем анимацию к alert */
+        .alert.fade-out {
+            animation: fadeOut 0.5s ease forwards; /* Плавное исчезновение за 0.5 секунды */
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #4f4e4e;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .form-control:focus {
+            border-color: #4f4e4e;
+            box-shadow: inset 0 1px 1px #4f4e4e, 0 0 8px #4f4e4e;
+        }
+
+        .invalid-feedback {
+            color: #4f4e4e; /* Серый цвет, как в Bootstrap для текста */
+        }
+
+
+        /* Переопределяем цвет для is-invalid */
+        .form-control.is-invalid {
+            border-color: #4f4e4e;
+        !important; /* Серый цвет для обводки */
+        }
+
+        /* Переопределяем цвет для фокуса is-invalid */
+        .is-invalid:focus {
+            border-color: #4f4e4e !important; /* Серый цвет для обводки при фокусе */
+            box-shadow: inset 0 1px 1px #4f4e4e, 0 0 8px #4f4e4e !important; /* Серый цвет тени */
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark navbar-background">
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="#">
+            <img alt="logo" class="img-fluid logo-max" height="125" src="images/logo.webp" width="700"/>
+        </a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="container-fluid text-center">
+            <div class="row collapse navbar-collapse ">
+                <div class="col nav-item">
+                    <a aria-current="page" class="nav-link nav-link-text active" href="#services">Услуги</a>
+                </div>
+                <div class="col nav-item">
+                    <a aria-current="page" class="nav-link nav-link-text" href="#about">О компании</a>
+                </div>
+                <div class="col nav-item">
+                    <a aria-current="page" class="nav-link nav-link-text" href="#place">Где мы?</a>
+                </div>
+                <div class="col nav-item">
+                    <a aria-current="page" class="nav-link nav-link-text" href="tel:+375297890285">Позвонить нам</a>
+                </div>
+                <div class="col nav-item">
+                    <a aria-current="page" class="nav-link nav-link-text" href="#cost">Узнать цену</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="collapse" id="navbarNav">
+    <div class="container-fluid slipway-background pt-4" style="background-color:#4F4E4E">
+        <div class="row px-4 ">
+            <div class="col-md-6 col-sm-8 pb-3">
+                <a aria-current="page" class="nav-link nav-link-text active" href="#services">Услуги</a>
+                <!-- <hr class="nav-link-text"> !-->
+            </div>
+        </div>
+        <div class="row px-4">
+            <div class="col-md-6 col-sm-8 pb-3">
+                <a aria-current="page" class="nav-link nav-link-text" href="#about">О компании</a>
+                <!-- <hr class="nav-link-text"> !-->
+            </div>
+        </div>
+        <div class="row px-4">
+            <div class="col-md-6 col-sm-8 pb-3">
+                <a aria-current="page" class="nav-link nav-link-text" href="#place">Где мы?</a>
+                <!-- <hr class="nav-link-text"> !-->
+            </div>
+        </div>
+        <div class="row px-4">
+            <div class="col-md-6 col-sm-8 pb-3">
+                <a aria-current="page" class="nav-link nav-link-text" href="tel:+375297890285">Позвонить нам</a>
+                <!-- <hr class="nav-link-text"> !-->
+            </div>
+        </div>
+        <div class="row px-4 ">
+            <div class="col-md-6 col-sm-8 mb-4">
+                <a aria-current="page" class="nav-link nav-link-text" href="#cost">Узнать цену</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="row pt-4 pb-3 border-color">
+        <div class="col">
+            <h1 class="h-text">Кузовной ремонт с точным восстановлением геометрии в Гродно</h1>
+            <p>После ДТП кузов вашего автомобиля может получить серьезные повреждения, которые требуют профессионального
+                подхода к ремонту. Наш автосервис в Гродно предлагает высококачественные услуги кузовного ремонта с
+                использованием современного оборудования, включая профессиональный стапель (каролинер). Мы понимаем, как
+                важно восстановить не только внешний вид автомобиля, но и его геометрию, чтобы обеспечить безопасность и
+                комфорт при вождении.
+            </p>
+        </div>
+    </div>
+
+    <div class="row pt-4 pb-3 border-color" id="services">
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid" height="300" src="images/slipway-dark.webp" width="449">
+            </div>
+        </div>
+        <div class="col-md-7 ">
+            <h2 class="h-text">Наши услуги</h2>
+            <ul>
+                <li>Вытяжка кузова на стапеле после аварий и переворотов</li>
+                <li>Устранение перекоса дверей, капота, багажника</li>
+                <li>Ремонт порогов, лонжеронов, стоек</li>
+                <li>Замена поврежденных элементов кузова</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row pt-4 pb-3 border-color">
+        <div class="col-md-7 ">
+            <h3 class="h-text">Для кого наши услуги?</h3>
+            <p>Наши услуги подойдут, если:</p>
+            <ul>
+                <li>Авто побывало в ДТП и потеряло устойчивость на дороге;</li>
+                <li>Появился скрип дверей или проблемы с закрыванием окон;</li>
+                <li>Нужно восстановить геометрию для безопасной эксплуатации.</li>
+            </ul>
+        </div>
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid" height="663" src="images/crash-cars.webp" width="1347">
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-4 pb-3 border-color" id="about">
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid align-self-center" height="142" src="images/logo-dark.webp" width="733">
+            </div>
+        </div>
+        <div class="col-md-7 ">
+            <h2 class="h-text">О компании</h2>
+            <p>«Автосервис [Название]» — специалисты по кузовному ремонту в Гродно с 2015 года.</p>
+            <ul>
+                <li>500+ восстановленных автомобилей;</li>
+                <li>Собственная покрасочная камера;</li>
+                <li>Работаем с официальными дилерами и страховыми компаниями.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row pt-4 pb-3 border-color">
+        <div class="col-md-7">
+            <h2 class="h-text">Почему мы?</h2>
+            <ul>
+                <li><strong>Профессионализм:</strong> Наша команда состоит из опытных специалистов, которые прошли
+                    обучение и имеют все необходимые сертификаты. Мы знаем, как правильно восстановить кузов автомобиля,
+                    чтобы он соответствовал заводским стандартам.
+                </li>
+                <li class="pt-3"><strong>Современное оборудование:</strong> Использование стапеля позволяет нам точно
+                    восстановить
+                    геометрию кузова, что критически важно для правильной работы всех систем автомобиля. Мы применяем
+                    только проверенные технологии и материалы, что гарантирует долговечность и надежность выполненных
+                    работ.
+                </li>
+                <li class="pt-3"><strong>Индивидуальный подход:</strong> Каждый автомобиль уникален, и мы учитываем все
+                    особенности
+                    вашего автомобиля при проведении ремонта. Мы предлагаем персонализированные решения, которые
+                    соответствуют вашим потребностям и бюджету.
+                </li>
+                <li class="pt-3"><strong>Удобное расположение:</strong> Наш автосервис имеет удобный подъезд с ул.
+                    Маслакова в
+                    Гродно, что делает его
+                    доступным для всех жителей города и окрестностей. Мы предлагаем удобные условия для клиентов,
+                    включая возможность записи на ремонт в удобное для вас время.
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid" height="792" src="images/staff.webp" width="1718">
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-4 pb-3 border-color" id="place">
+        <div class="col-md-5 place-background">
+            <h2 class="h-text">Мы находимся</h2>
+            <p>Адрес: <strong>Гродно, [улица, дом]</strong></p>
+            <p>Работаем ежедневно с 9:00 до 19:00.</p>
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid" height="145" src="images/place.svg" width="400">
+            </div>
+        </div>
+
+        <div class="col-md-7 d-flex align-items-center" id="map_container" style="filter: grayscale(100%);">
+            <div class="container">
+                <img alt="" class="img-fluid" height="571" id="mock_map" src="images/map.webp" width="962">
+                <div id="yandex_map_container">
+                    <script async id="map_lazy"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-4 pb-3 border-color">
+        <div class="col-md-7 ">
+            <h2 class="h-text">Свяжитесь с нами</h2>
+            <p>Звоните прямо сейчас:
+                <a class="h-text link-dark link-underline-light" href="tel:+375297890285">+375297890285</a>
+            </p>
+        </div>
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid phone-max" height="327" src="images/phone.webp" width="380">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row pt-4 pb-3" id="cost">
+        <div class="col-md-5 d-flex align-items-center">
+            <div class="container d-flex justify-content-center">
+                <img alt="" class="img-fluid" height="600" src="images/online.webp" style="max-height: 300px; width: auto"
+                     width="526">
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h2 class="h-text">Узнать цену</h2>
+            <p>Отправьте фото/видео вашей проблемы и наши специалисты свяжутся с вам в кротчайшее время</p>
+
+            <form id="myForm">
+                <div class="mb-3">
+                    <label class="form-label" for="phone">Номер телефона</label>
+                    <input class="form-control" id="phone" name="phone" placeholder="+375 (XX) XXX-XX-XX"
+                           type="tel">
+                    <div class="invalid-feedback">Пожалуйста, введите корректный номер телефона Беларуси.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="message">Краткое описание (необязательно)</label>
+                    <textarea class="form-control" id="message" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input accept="image/*,video/*" hidden id="fileInput" multiple type="file">
+                    <button class=" button-color" id="add" onclick="document.getElementById('fileInput').click()"
+                            type="button">
+                        Добавить файлы
+                    </button>
+                </div>
+                <div class="container">
+                    <div class="row mb-3" id="filePreview"></div>
+                </div>
+                <div class="alert alert-dismissible fade show d-none" id="customAlert" role="alert">
+                    <span id="alert-text"></span>
+                    <button class="btn-close" onclick="closeBtnAlert()" type="button"></button>
+                </div>
+                <div class="mb-3" id="btnSubmit">
+                    <button class="button-color " type="submit">Отправить</button>
+                </div>
+            </form>
+
+            <div class="progress" id="progressContainer"
+                 role="progressbar" style="display: none">
+                <div class="progress-bar progress-bar-color" id="progressBar">0%</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="navbar-background">
+    <div class="container-fluid text-center">
+        <div class="row p-2">
+            <div class="col-xl-2 col-md-12 nav-item">
+
+                <img alt="logo" class="img-fluid logo-max" height="125" src="images/logo.webp" width="700"/>
+            </div>
+            <div class="col-xl-2 col-md-12 nav-item">
+                <a aria-current="page" class="nav-link nav-link-text active" href="#services">Услуги</a>
+            </div>
+            <div class="col-xl-2 col-md-12 nav-item">
+                <a aria-current="page" class="nav-link nav-link-text" href="#about">О компании</a>
+            </div>
+            <div class="col-xl-2 col-md-12 nav-item">
+                <a aria-current="page" class="nav-link nav-link-text" href="#place">Где мы?</a>
+            </div>
+            <div class="col-xl-2 col-md-12 nav-item">
+                <a aria-current="page" class="nav-link nav-link-text" href="tel:+375297890285">Позвонить нам</a>
+            </div>
+            <div class="col-xl-2 col-md-12 nav-item">
+                <a aria-current="page" class="nav-link nav-link-text" href="#cost">Узнать цену</a>
+            </div>
+        </div>
+        <div class="row pb-1">
+            <a aria-current="page" class="nav-link copyright-text" href="#">
+                © <span id="current-year"></span>, CrashCar.by
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/cleave.min.js"></script>
+<script src="js/cleave-phone.by.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear().toString();
+</script>
+
+<script>
+    const mapContainer = document.getElementById('map_container');
+    const mapBlock = document.getElementById('map_lazy');
+    const mockMap = document.getElementById('mock_map');
+    const yandexMapContainer = document.getElementById('yandex_map_container');
+
+    const eventOptions = {
+        once: true,
+        passive: true,
+        capture: true
+    };
+
+    let mapLoaded = false;
+
+    function startLazyMap() {
+        if (!mapLoaded) {
+            mapLoaded = true;
+
+            const offsetHeight = mockMap.offsetHeight;
+            yandexMapContainer.style.height = `${offsetHeight}px`;
+            mapBlock.setAttribute('src', "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A78876d288580cc2ceead057f37c3089d95c879d33dd8e22133ad20f0f14343b4&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true");
+            mockMap.remove();
+        }
+    }
+
+    ['click', 'mouseover', 'touchstart', 'touchmove'].forEach(event => {
+        mapContainer.addEventListener(event, startLazyMap, eventOptions);
+    });
+</script>
+
+<script>
+    // Константы для элементов DOM
+    const phoneInput = document.getElementById('phone');
+    const message = document.getElementById('message');
+    const myForm = document.getElementById('myForm');
+    const fileInput = document.getElementById('fileInput');
+    const filePreview = document.getElementById('filePreview');
+    const submitButton = document.getElementById('btnSubmit');
+    const progressBar = document.getElementById('progressBar');
+    const progressContainer = document.getElementById('progressContainer');
+    const customAlert = document.getElementById('customAlert');
+    const alertText = document.getElementById('alert-text');
+
+    let filesArray = []; // Массив для хранения выбранных файлов
+
+    // Инициализация маски для телефона
+    new Cleave(phoneInput, {
+        phone: true,
+        phoneRegionCode: 'BY', // Указываем код региона (Беларусь)
+        delimiter: '-', // Разделитель
+        prefix: '+375', // Префикс для номера
+        blocks: [4, 2, 3, 2, 2], // Формат: +375 (XX) XXX-XX-XX
+        onValueChanged: function (e) {
+            // Проверка на полноту номера
+            if (e.target.rawValue.length === 13) { // 9 цифр без префикса
+                phoneInput.classList.remove('is-invalid');
+            }
+        }
+    });
+
+
+    // Валидация формы
+    if (myForm) {
+        myForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Проверка на полноту номера
+            if (phoneInput && phoneInput.value.replace(/\D/g, '').length !== 12) { // 12 цифр с префиксом
+                phoneInput.classList.add('is-invalid'); // Показываем ошибку
+                phoneInput.scrollIntoView();
+                return;
+            }
+
+            if (message.value.length === 0 && filesArray.length === 0) {
+                showAlert('Добавьте описание или файлы', 'alert-danger');
+                return;
+            }
+
+            phoneInput.classList.remove('is-invalid'); // Убираем ошибку
+            sendFormData(); // Отправка данных формы
+        });
+    }
+
+    // Обработчик выбора файлов
+    if (fileInput) {
+        fileInput.addEventListener('change', function () {
+            const files = Array.from(fileInput.files);
+            filesArray = [...filesArray, ...files];
+            fileInput.value = null;
+            updatePreview(files);
+        });
+    }
+
+    // Обновление превью файлов
+    function updatePreview(files) {
+        files.forEach((file, index) => {
+            const reader = new FileReader();
+            const previewItem = document.createElement('div');
+            previewItem.className = 'col-lg-3 col-md-6 p-1 position-relative';
+            previewItem.style.filter = 'grayscale(100%)';
+
+            const loader = document.createElement('div');
+            loader.className = 'loader';
+            previewItem.appendChild(loader);
+            filePreview.appendChild(previewItem);
+
+            reader.onload = function (e) {
+                const media = file.type.startsWith('image')
+                    ? document.createElement('img')
+                    : document.createElement('video');
+                media.className = 'img-fluid';
+                media.src = e.target.result;
+                media.controls = true;
+
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'btn-close btn-close-white position-absolute top-0 end-0 p-3';
+                removeBtn.onclick = () => removeFile(index, previewItem);
+
+                previewItem.removeChild(loader);
+                previewItem.appendChild(media);
+                previewItem.appendChild(removeBtn);
+
+                const title = document.createElement('span');
+                title.className = 'text-break';
+                title.textContent = file.name;
+                previewItem.appendChild(title);
+            };
+
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Удаление файла
+    function removeFile(index, previewItem) {
+        filesArray = filesArray.filter((_, i) => i !== index);
+        previewItem.remove();
+    }
+
+    // Отправка формы
+    function sendFormData() {
+        if (!submitButton || !progressBar || !progressContainer) return;
+
+        submitButton.style.display = 'none';
+
+        const formData = new FormData();
+        formData.append('phone', phoneInput.value);
+        formData.append('message', document.getElementById('message').value);
+
+        filesArray.forEach((file) => {
+            formData.append('files', file);
+        });
+
+        const xhr = new XMLHttpRequest();
+
+        // Показываем прогресс-бар
+        progressContainer.style.display = 'block';
+        progressBar.style.width = '0%';
+        progressBar.textContent = '0%';
+
+        xhr.upload.addEventListener('progress', function (e) {
+            if (e.lengthComputable) {
+                const percent = Math.round((e.loaded / e.total) * 100);
+                progressBar.style.width = `${percent}%`;
+                progressBar.textContent = `${percent}%`;
+            }
+        });
+
+        xhr.addEventListener('load', function () {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                showAlert('Заявка отправлен. Ожидайте звонка!', 'alert-secondary');
+                myForm.reset();
+                filesArray = [];
+                filePreview.innerHTML = '';
+            } else {
+                showAlert(`Ошибка при отправке формы: ${xhr.statusText}`, 'alert-danger');
+            }
+            progressContainer.style.display = 'none';
+            submitButton.style.display = 'block';
+        });
+
+        xhr.addEventListener('error', function () {
+            showAlert('Ошибка соединения', 'alert-danger');
+            progressContainer.style.display = 'none';
+            submitButton.style.display = 'block';
+        });
+
+        xhr.open('POST', '/api/orders', true);
+        xhr.send(formData);
+    }
+
+    // Показ уведомления
+    function showAlert(text, className) {
+        if (!customAlert || !alertText) return;
+
+        customAlert.classList.add(className);
+        customAlert.classList.remove('d-none');
+        alertText.textContent = text;
+
+        setTimeout(() => {
+            closeAlert(customAlert);
+        }, 5000);
+    }
+
+    // Закрытие уведомления
+    function closeAlert(alertElement) {
+        alertElement.classList.add('fade-out');
+
+        setTimeout(() => {
+            alertElement.classList.add('d-none');
+            alertElement.classList.remove('fade-out', 'alert-secondary', 'alert-danger');
+        }, 500);
+    }
+
+    // Закрытие уведомления по кнопке
+    function closeBtnAlert() {
+        closeAlert(customAlert);
+    }
+</script>
+</body>
+</html>

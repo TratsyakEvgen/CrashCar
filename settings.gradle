@@ -1,0 +1,6 @@
+rootProject.name = 'CrashCar'
+include('orders')
+include('telegram-notifier')
+include 'core'
+include 'email-notifier'
+
